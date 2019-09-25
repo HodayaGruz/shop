@@ -10,14 +10,14 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 3fr ;
     grid-template-areas: 
-      "header "
-      "side"
-      " main" ;
+      "header header"
+      "side side"
+      "main main" ;
   }
     height: 100vh;
     overflow: hidden;
 
-    & @media (min-width: 700px) {
+    @media (min-width: 700px) {
         grid-template-areas: 
       "header  header"
       "side main" ;
