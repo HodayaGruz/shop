@@ -6,7 +6,10 @@ import Card from './Card.js'
 const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px
+    grid-gap: 20px;
+    grid-area: main;
+    padding: 20px;
+    overflow: scroll
 `;
 
 const Catalog = () => {
