@@ -4,6 +4,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 import {getProductsList} from '../store/actions';
 import {productList} from "../shared/mock";
 import Catalog from "./Catalog";
+import Sidebar from "./Sidebar/Sidebar";
 
 const Wrapper = styled.div`
     display: grid;
@@ -44,7 +45,7 @@ const Home = () => {
         <Wrapper>
             <GlobalStyle/>
             <div style={{gridArea: 'header'}}>header</div>
-             <div style={{gridArea: 'side'}}>sidee</div>
+             <Sidebar/>
             <Catalog/>
         </Wrapper>
     )
