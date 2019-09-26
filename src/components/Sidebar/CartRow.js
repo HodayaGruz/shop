@@ -13,7 +13,7 @@ flex: 1
 `;
 
 const CartRow = ({id, count}) => {
-    const itemData = useSelector(productDataSelector)
+    const itemData = useSelector((state) => productDataSelector(state, id))
 
     return (
         <Wrapper>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e5b640-fca9-4ed1-8b87-46c3e55ce4ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/CartRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/CartRow.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569402479180</updated>
       <workItem from="1569402480613" duration="11447000" />
-      <workItem from="1569487043419" duration="6733000" />
+      <workItem from="1569487043419" duration="6771000" />
     </task>
     <servers />
   </component>
