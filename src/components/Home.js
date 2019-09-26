@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import styled, {createGlobalStyle} from 'styled-components';
-import Drawer from 'rc-drawer';
 import {getProductsList} from '../store/actions';
 import {productList} from "../shared/mock";
 import Catalog from "./Catalog";
