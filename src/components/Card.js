@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart, changeItemSum} from "../store/actions";
 import {isInCartSelector} from "../store/selectors";
+import {Button} from '../shared/components'
 import Count from './Count';
 
 const Wrapper = styled.div`
@@ -27,23 +28,8 @@ const Price = styled.div`
 `;
 const LastRow = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
-const AddButton = styled.button`
-    flex-grow: 1;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    color: #e01010;
-    font-size: 16px;
-    background: #ffffff;
-    padding: 10px 20px 10px 20px;
-    border: solid #e01010 1px;
-    text-decoration: none;
-    &:hover {
-        background-color: rgba(224, 16, 16, 0.2)
-    }
-`;
-
 
 const Card = ({image, id, name, price}) => {
 
@@ -73,7 +59,7 @@ const Card = ({image, id, name, price}) => {
             <Price>{`${price} ₪`}</Price>
             <LastRow>
             <Count changeVal={changeQuantity} counter={counter} count={isInCart ? 1 : 0}/>
-            <AddButton onClick={addItem}>{isInCart ? 'Remove' : 'Add'}</AddButton>
+            <Button onClick={addItem}>{isInCart ? 'Remove' : 'Add'}</Button>
             </LastRow>
         </Wrapper>
     )

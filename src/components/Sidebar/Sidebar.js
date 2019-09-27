@@ -2,8 +2,18 @@ import React from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
 import CartRow from "./CartRow";
+import TotalSum from "./TotalSum";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    padding: 20px;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    grid-area: side
+`;
+
+const List = styled.div`
+`;
 const EmptyPage = styled.div`
     display: flex;
     align-items: center;
@@ -12,7 +22,6 @@ const EmptyPage = styled.div`
 const Text = styled.div`
 
 `;
-
 
 const Sidebar = () => {
 
@@ -26,9 +35,13 @@ const Sidebar = () => {
             </EmptyPage>
             :
         <Wrapper>
+            <List>
             {
-                cart.map(item => <CartRow {...item}/>)
+                cart.map(item => <CartRow key={item.id} {...item}/>)
             }
+            </List>
+            <div style={{height: 80}}/>
+            <TotalSum/>
         </Wrapper>
     )
 }

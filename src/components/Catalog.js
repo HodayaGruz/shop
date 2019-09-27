@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     grid-gap: 20px;
     grid-area: main;
     padding: 20px;
-    overflow: scroll
+    overflow: auto;
 `;
 
 const Catalog = () => {
