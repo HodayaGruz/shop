@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {useDispatch, useSelector} from "react-redux";
-import {addToCart, removeFromCart, changeItemSum} from "../store/actions";
-import {isInCartSelector} from "../store/selectors";
+import {useDispatch, useSelector} from 'react-redux';
+import {addToCart, removeFromCart, changeItemSum} from '../store/actions';
+import {isInCartSelector} from '../store/selectors';
 import {Button} from '../shared/components'
 import Count from './Count';
 
@@ -38,7 +38,6 @@ const Card = ({image, id, name, price}) => {
     const isInCart = useSelector(state => isInCartSelector(state, id))
     const [counter, setCounter] = useState(0);
 
-    console.log('isInCart', isInCart)
     const addItem = () => {
         isInCart && setCounter(0);
         dispatch(isInCart ? removeFromCart(id) : addToCart({id, count: counter || 1}))

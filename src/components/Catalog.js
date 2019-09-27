@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {useSelector} from "react-redux";
+import {useSelector} from 'react-redux';
 import Card from './Card.js'
 
 const Wrapper = styled.div`
@@ -9,7 +9,9 @@ const Wrapper = styled.div`
     grid-gap: 20px;
     grid-area: main;
     padding: 20px;
-    overflow: auto;
+    @media (min-width: 700px) {
+        overflow: auto;
+    }
 `;
 
 const Catalog = () => {

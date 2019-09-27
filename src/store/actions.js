@@ -8,6 +8,10 @@ export const removeFromCart = (id) => ({
     type: 'REMOVE_CART'
 });
 
+export const resetCart = () => ({
+    type: 'RESET_CART'
+});
+
 export const changeItemSum = (data) => ({
     data,
     type: 'CHANGE_SUM'

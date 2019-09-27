@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {useSelector} from "react-redux";
-import {isInCartSelector} from "../store/selectors";
 
 const Wrapper = styled.div`
     display: flex;
@@ -23,8 +21,7 @@ const Count = ({changeVal, count, counter}) => {
     const [val, setVal] = useState(0);
 
     useEffect(() => {
-        console.log(count, val)
-        if (count && !val){
+        if (count && !val && val !== ''){
             setVal(1);
         } else if (!count && val && !counter) {
             setVal(0)
@@ -33,12 +30,22 @@ const Count = ({changeVal, count, counter}) => {
 
     const onChange = (e) => {
         setVal(e.target.value);
-        changeVal(parseInt(e.target.value))
+        if (e.target.value !== '' ){
+            changeVal(parseInt(e.target.value))
+        }
     }
+
+    const onBlur = (e) => {
+        if (e.target.value === '') {
+            setVal(0);
+            changeVal(0)
+        }
+    }
+
     return (
         <Wrapper>
             <div>Quantity:</div> 
-            <NumberInput value={val} min={0} onChange={onChange}/>
+            <NumberInput value={val} min={0} onChange={onChange} onBlur={onBlur}/>
         </Wrapper>
     )
 }

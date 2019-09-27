@@ -1,10 +1,9 @@
 import React from 'react';
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import {FaTrashAlt} from 'react-icons/fa'
 import {productDataSelector} from '../../store/selectors';
 import {removeFromCart} from '../../store/actions';
-import {Button} from '../../shared/components';
 
 const Wrapper = styled.div`
     display: flex;

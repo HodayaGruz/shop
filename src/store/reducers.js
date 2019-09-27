@@ -5,6 +5,8 @@ export const cart = (state = [], action) => {
             return [...state, action.data];
         case 'REMOVE_CART':
             return state.filter(item => item.id !== action.data);
+        case 'RESET_CART':
+            return [];
         case 'CHANGE_SUM':
             const tempState = [...state];
             const itemIndex = tempState.findIndex(item => item.id === action.data.id)

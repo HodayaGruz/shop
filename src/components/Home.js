@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector} from 'react-redux';
 import styled, {createGlobalStyle} from 'styled-components';
 import {getProductsList} from '../store/actions';
-import {productList} from "../shared/mock";
-import Catalog from "./Catalog";
-import Sidebar from "./Sidebar/Sidebar";
+import {productList} from '../shared/mock';
+import Catalog from './Catalog';
+import Header from './Header';
+import Sidebar from './Sidebar/Sidebar';
 
 const Wrapper = styled.div`
     display: grid;
@@ -15,9 +16,12 @@ const Wrapper = styled.div`
       "main main" ;
   }
     height: 100vh;
-    overflow: hidden;
-
+    overflow: auto;
+    margin-top: 90px;
+    
     @media (min-width: 700px) {
+        margin-top: 0px;
+        overflow: hidden;
         grid-template-areas: 
       "header  header"
       "side main" ;
@@ -44,8 +48,8 @@ const Home = () => {
     return (
         <Wrapper>
             <GlobalStyle/>
-            <div style={{gridArea: 'header'}}>header</div>
-             <Sidebar/>
+            <Header/>
+            <Sidebar/>
             <Catalog/>
         </Wrapper>
     )
