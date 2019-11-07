@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled, {createGlobalStyle} from 'styled-components';
 import {getProductsList} from '../store/actions';
-import {productList} from '../shared/mock';
+import {getProducts} from '../shared/services/api';
 import Catalog from './Catalog';
 import Header from './Header';
 import Sidebar from './Sidebar/Sidebar';
@@ -40,9 +40,15 @@ const Home = () => {
     const products = useSelector(({productsList}) => productsList);
 
     useEffect(() => {
-        if (!products || products.length === 0){
-            dispatch(getProductsList(productList));
+        const fetchData = async () => {
+          if (!products || products.length === 0){
+            const result = await getProducts();
+            if (result){
+              dispatch(getProductsList(result));
+            }
+          }
         }
+        fetchData()
     }, []);
 
     return (
